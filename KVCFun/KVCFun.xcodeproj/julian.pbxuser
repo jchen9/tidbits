@@ -1,0 +1,161 @@
+// !$*UTF8*$!
+{
+	256AC3D90F4B6AC300CF3369 /* KVCFunAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {552, 598}}";
+			sepNavSelRange = "{206, 0}";
+			sepNavVisRange = "{0, 361}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = B9ECF8CD11331D83007EC7A5 /* KVCFun */;
+		activeTarget = 8D1107260486CEB800E47090 /* KVCFun */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* KVCFun */,
+		);
+		codeSenseManager = B9ECF8DF11331D97007EC7A5 /* Code sense */;
+		executables = (
+			B9ECF8CD11331D83007EC7A5 /* KVCFun */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					374,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 288564798;
+			PBXWorkspaceStateSaveDate = 288564798;
+		};
+		perUserProjectItems = {
+			B9EC994E113326FA006791DD /* PBXTextBookmark */ = B9EC994E113326FA006791DD /* PBXTextBookmark */;
+			B9EC994F113326FA006791DD /* PBXTextBookmark */ = B9EC994F113326FA006791DD /* PBXTextBookmark */;
+			B9EC9950113326FA006791DD /* PBXTextBookmark */ = B9EC9950113326FA006791DD /* PBXTextBookmark */;
+			B9ECF8FA11332604007EC7A5 /* PBXTextBookmark */ = B9ECF8FA11332604007EC7A5 /* PBXTextBookmark */;
+		};
+		sourceControlManager = B9ECF8DE11331D97007EC7A5 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* KVCFun */ = {
+		activeExec = 0;
+		executables = (
+			B9ECF8CD11331D83007EC7A5 /* KVCFun */,
+		);
+	};
+	B9EC994E113326FA006791DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B9ECF8DB11331D97007EC7A5 /* AppController.h */;
+		name = "AppController.h: 7";
+		rLen = 0;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 383;
+		vrLoc = 0;
+	};
+	B9EC994F113326FA006791DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B9ECF8DC11331D97007EC7A5 /* AppController.m */;
+		name = "AppController.m: 16";
+		rLen = 46;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 545;
+		vrLoc = 0;
+	};
+	B9EC9950113326FA006791DD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B9ECF8DC11331D97007EC7A5 /* AppController.m */;
+		name = "AppController.m: 15";
+		rLen = 0;
+		rLoc = 214;
+		rType = 0;
+		vrLen = 609;
+		vrLoc = 0;
+	};
+	B9ECF8CD11331D83007EC7A5 /* KVCFun */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = KVCFun;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	B9ECF8DB11331D97007EC7A5 /* AppController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {552, 595}}";
+			sepNavSelRange = "{135, 0}";
+			sepNavVisRange = "{0, 383}";
+		};
+	};
+	B9ECF8DC11331D97007EC7A5 /* AppController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {552, 595}}";
+			sepNavSelRange = "{214, 0}";
+			sepNavVisRange = "{0, 609}";
+		};
+	};
+	B9ECF8DE11331D97007EC7A5 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	B9ECF8DF11331D97007EC7A5 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	B9ECF8FA11332604007EC7A5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* KVCFunAppDelegate.m */;
+		name = "KVCFunAppDelegate.m: 12";
+		rLen = 0;
+		rLoc = 206;
+		rType = 0;
+		vrLen = 361;
+		vrLoc = 0;
+	};
+}
