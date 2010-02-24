@@ -43,6 +43,9 @@ limit coredumpsize 0
 # vi key binding
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
 # mapping del
 bindkey "\e[3~" delete-char
 
