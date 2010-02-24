@@ -1,0 +1,218 @@
+# .bashrc
+
+export HOME=/Users/julian
+
+# User specific aliases and functions
+# alias '-'='popd'
+alias +='pushd .'
+# alias '='='dirs'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+#alias ls='~/bin/gls -F -h --color --show-control-chars'
+alias ls='ls -FGv'
+alias df='df -h'
+alias du='du -h'
+alias telnet='telnet -L'
+alias crxvt16="/usr/local/bin/rxvt -fg white -bg black -fm '-eten-fixed-medium-r-normal--16-150-75-75-c-160-big5.eten-0' -km big5 &"
+
+alias crxvt24="/usr/local/bin/rxvt -fg white -bg black -fn 12x24 -fm '-eten-fixed-medium-r-normal--24-230-75-75-c-240-big5.eten-0' -km big5 &"
+
+alias ldd='otool -L'
+alias g4ip="curl http://darwin.nchc.org.tw/ipinfo/g4mini.ip"
+alias gmackie="ssh \`g4ip\`"
+alias lmackie="ssh 10.0.1.100"
+
+alias ss="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background"
+
+# Fast access aliases
+alias ror="cd ~/dev/ror/iresearch"
+alias cr="cd ~/dev/EVL/corelyzer/branches/"
+
+alias svndiff='svn diff --diff-cmd svnopendiffshim.py'
+# alias srv="ssh julian9.com"
+# alias clean="rm -rf icores* cache/feed"
+
+# Handy function definitions
+diffit () { svn diff > /tmp/svn_temp.diff; open -a TextMate /tmp/svn_temp.diff; }
+
+# Chinese zh_TW.Big5 Environment setups
+# export LC_ALL=zh_TW.Big5
+# export LC_CTYPE=zh_TW.Big5
+# export LANG=zh_TW.Big5 
+# export XMODIFIERS=@im=xcin-zh_TW.Big5 
+# export XMODIFIERS=@im=xcin
+# export LESSCHARSET=latin1
+# stty cs8 -istrip 
+# stty pass8 
+
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+# Some Env variables
+export PATH="/bin:/usr/bin:/usr/X11R6/bin:/usr/bin/X11:/sbin:/usr/sbin:/usr/local/bin:/usr/games/"
+export PAGER='/usr/bin/less -r'
+# export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/X11R6/lib:/usr/local/lib:$HOME/lib"
+# export TCLLIBPATH=~/forge/CVS_Sources/VTK/Wrapping/Tcl
+# export http_proxy="http://140.110.17.100:3128/"
+# export ftp_proxy="http://140.110.17.100:3128/"
+
+# Globus Setups
+# export GPT_LOCATION=/opt/Globus/gt3
+# export GLOBUS_LOCATION=/opt/Globus/current
+# export PATH="$PATH:$GLOBUS_LOCATION/bin:$GLOBUS_LOCATION/sbin"
+# export MANPATH="$MANPATH:/usr/share/man:$GLOBUS_LOCATION/man"
+# . $GLOBUS_LOCATION/etc/globus-user-env.sh
+
+# Java setups
+# export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+# export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+# export CLASSPATH=$CLASSPATH:./:/Users/julian/Develop/junit3.8.1/junit.jar
+# export CLASSPATH="/usr/local/lib/vtk.jar:/home/julian/lib/hb15.jar:./"
+# export PATH="$PATH:${JDK_HOME}/bin"
+
+# Apache Jakarta Tomcat + AXIS 
+# export CATALINA_HOME=$HOME/Applications/Servers/jakarta-tomcat
+# export AXIS=$HOME/Develop/WebServices/axis-1_1
+# export CLASSPATH=$CLASSPATH:$AXIS/lib/axis.jar:$AXIS/lib/axis-ant.jar:$AXIS/lib/commons-discovery.jar:$AXIS/lib/commons-logging.jar:$AXIS/lib/jaxrpc.jar:$AXIS/lib/log4j-1.2.8.jar:$AXIS/lib/saaj.jar:$AXIS/lib/wsdl4j.jar:$CATALINA_HOME/common/lib/servlet.jar
+
+# WebServices Workshop i2g stuff
+# export CLASSPATH=$CLASSPATH:/Users/julian/Develop/WebServices/ClimateDB/DBservicesExample/i2g.jar:/Users/julian/Develop/WebServices/ClimateDB/DBservicesExample/db2java.jar
+
+# CVS
+export CVS_RSH=ssh
+
+export REPLYTO=julian@evl.uic.edu
+
+# Need for a xterm & co if we don't make a -ls
+# [ -n $DISPLAY ] && {
+#	. /etc/profile.d/alias.sh
+#  echo 'No global aliases'
+# }
+
+# Read first /etc/inputrc if the variable is not defined, and after the /etc/inputrc 
+# include the ~/.inputrc
+[ -z $INPUTRC ] && export INPUTRC=/etc/inputrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# my prompt stuff - Darwin color change
+COLOR1="\[\033[0;29m\]"
+COLOR2="\[\033[0;29m\]"
+COLOR3="\[\033[0;29m\]"
+COLOR4="\[\033[0;29m\]"
+
+if [ "$UID" = "0" ];
+then
+# I am root
+COLOR2="\[\033[0;31m\]"
+fi
+
+# Darwin - White bg
+PS1="$COLOR2($COLOR3[julian@\h]$COLOR2)-($COLOR1\@$COLOR2)-($COLOR1\W$COLOR2)$COLOR1\n$COLOR1\\$ $COLOR4"
+
+if [ "$EMACS" = "t" ];
+then
+    PS1="([julian@\h])-(\@)-(\W)\n\\$ "
+fi
+
+# Normal - Black bg,
+# PS1="$COLOR2($COLOR3[julian@\h]$COLOR2)-($COLOR1\@$COLOR2)-($COLOR1\W$COLOR2)$COLOR1\n$COLOR1\\$ $COLOR4"
+# PS1="$COLOR2($COLOR3[julian@\h]$COLOR2)-($COLOR1\@ $COLOR2$COLOR1\d$COLOR2)-($COLOR1\W$COLOR2)$COLOR1\n$COLOR1\\$ $COLOR4"
+# PS1="$COLOR2($COLOR1\@ $COLOR2$COLOR1\d$COLOR2)-($COLOR1\W$COLOR2)$COLOR1\n$COLOR1\\$ $COLOR4"
+
+# Couple this with a dinky prompt-command which sets your terminal titles:
+if [ "$TERM" = "rxvt" -o "$TERM" = "xterm" -o "$TERM" = "xterm-color" -o "$TERM" = "xterms" ];
+then
+  PROMPT_COMMAND='echo -ne "\033]0;<${USER}@${HOSTNAME}>:  ${PWD}\007"'
+export PROMPT_COMMAND
+fi
+
+# export TERM=rxvt
+
+# Below should be working from above statements
+# echo -ne "\033]0;<${USER}@${HOSTNAME}>: ${PWD}\007"
+# /usr/games/fortune
+#/usr/bin/newmail -i 60
+
+export DYLD_LIBRARY_PATH=/usr/lib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries:/usr/X11/lib
+
+# Macports
+export PATH=/opt/local/bin:$PATH
+export MANPATH=$MANPATH:/opt/local/man
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/opt/local/lib
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig
+
+# git
+export PATH=$PATH:/usr/local/git/bin
+export MANPATH=$MANPATH:/usr/local/git/man
+
+# QT
+# export QTDIR=/opt/qt
+# export PATH=$QTDIR/bin:$PATH
+# export MANPATH=$QTDIR/doc/man:$MANPATH
+# export DYLD_LIBRARY_PATH=$QTDIR/lib:$DYLD_LIBRARY_PATH
+
+# IBM compilers
+# export PATH=$PATH:/opt/ibmcmp/vacpp/6.0/bin:/opt/ibmcmp/xlf/8.1/bin
+
+# EVL
+export SVN_EDITOR="mate -w"
+# export SVN_EDITOR='see -w'
+export EDITOR='mate -w'
+export EVL='/opt/EVL'
+export SAGE='/opt/EVL/sage3.0'
+export SAGE_DIRECTORY=$SAGE
+export PATH=~/bin:$PATH:${EVL}/bin:$SAGE/bin
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:${SAGE}/lib
+export DISPLAY=:0.0
+
+# Ask Python run in 32-bit mode
+export VERSIONER_PYTHON_PREFER_32_BIT=yes
+
+# LUA
+# export LUA='/usr/local/lua'
+# export PATH=${PATH}:${LUA}/bin
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${LUA}/lib
+# export MANPATH=${MANPATH}:${LUA}/man
+
+# Electro
+# export ELECTRO='/opt/Electro'
+# export ELECTRO='/usr/local/electro'
+# export PATH=$PATH:${ELECTRO}
+
+# wxCoreWall
+# export PATH=${HOME}/local/bin:$PATH
+
+# !use  export DYLD_LIBRARY_PATH=${HOME}/local.corewall/lib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:$DYLD_LIBRARY_PATH
+
+# JOGL
+# export CLASSPATH=$CLASSPATH:/Users/julian/Develop/Java/jogl/build/jogl.jar
+# export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/julian/Develop/Java/jogl/build/obj
+# export CW=/Users/julian/dev/EVL/corelyzer/branches/corelyzer-packages
+
+# CUDA
+export CUDA='/usr/local/cuda'
+export PATH=$PATH:$CUDA/bin
+export MANPATH=$MANPATH:$CUDA/man
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$CUDA/lib
+
+# E17
+# export PATH=/opt/E/bin:$PATH
+
+# Docbook
+export XSL=/opt/local/share/xsl/docbook-xsl
+
+# Correlator
+export CORE_DIRECTORY="/Users/julian/dev/EVL/correlator"
+
+# Memcached
+export MEMCACHED_SERVERS="hackintosh,corewalldb.evl.uic.edu"
+
+# Cappuccino
+export CAPP_BUILD=/Users/julian/Apps/Cappuccino
+export PATH=$PATH:$CAPP_BUILD/Debug/env/bin
+
+cd $HOME
