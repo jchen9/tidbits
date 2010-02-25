@@ -1,5 +1,6 @@
 # Modified from vgod's shared version
 export PATH="$PATH:~/bin:/usr/local/bin:/usr/local/texlive/2007/bin/i386-darwin:/opt/flex_sdk_3/bin:/usr/texbin"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/lib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries:/usr/X11/lib
 export EDITOR=vim
 export LANG=en_US.UTF-8
 
