@@ -1,6 +1,6 @@
 # Modified from vgod's shared version
 export PATH="$PATH:~/bin:/usr/local/bin:/usr/local/texlive/2007/bin/i386-darwin:/opt/flex_sdk_3/bin:/usr/texbin"
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/lib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries:/usr/X11/lib
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries:/usr/X11/lib
 export EDITOR=vim
 export LANG=en_US.UTF-8
 
@@ -9,6 +9,13 @@ export PATH=/opt/local/bin:$PATH
 export MANPATH=$MANPATH:/opt/local/man
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/opt/local/lib
 export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig
+
+# CUDA
+export CUDA='/usr/local/cuda'
+export PATH=$PATH:$CUDA/bin
+export MANPATH=$MANPATH:$CUDA/man
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$CUDA/lib
+
 
 # git
 export PATH=$PATH:/usr/local/git/bin
