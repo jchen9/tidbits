@@ -1,5 +1,5 @@
 # Modified from vgod's shared version
-export PATH="$PATH:~/bin:/usr/local/bin:/usr/local/texlive/2007/bin/i386-darwin:/opt/flex_sdk_3/bin:/usr/texbin"
+export PATH="$PATH:${HOME}/bin:/usr/local/bin:/usr/local/texlive/2007/bin/i386-darwin:/opt/flex_sdk_3/bin:/usr/texbin"
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries:/usr/X11/lib
 export EDITOR=vim
 export LANG=en_US.UTF-8
@@ -16,11 +16,17 @@ export PATH=$PATH:$CUDA/bin
 export MANPATH=$MANPATH:$CUDA/man
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$CUDA/lib
 
-
 # git
 export PATH=$PATH:/usr/local/git/bin
 export MANPATH=$MANPATH:/usr/local/git/man
 
+# Cappuccino
+export CAPP_BUILD=/Users/julian/Apps/Cappuccino
+export PATH=$PATH:$CAPP_BUILD/Debug/env/bin
+export PATH="/Users/julian/Apps/Cappuccino/narwhal/bin:$PATH"
+export NARWHAL_ENGINE=jsc
+
+# Common
 UNAME=`uname`
 if [[ $UNAME == "Darwin" ]]
 then
