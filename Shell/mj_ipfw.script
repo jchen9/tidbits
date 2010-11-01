@@ -1,0 +1,78 @@
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	/Library/StartupItems/myIPFW
+#	/Library/StartupItems/myIPFW/myIPFW
+#	/Library/StartupItems/myIPFW/StartupParameters.plist
+#
+echo c - /Library/StartupItems/myIPFW
+mkdir -p /Library/StartupItems/myIPFW > /dev/null 2>&1
+echo x - /Library/StartupItems/myIPFW/myIPFW
+sed 's/^X//' >/Library/StartupItems/myIPFW/myIPFW << 'END-of-/Library/StartupItems/myIPFW/myIPFW'
+X#!/bin/sh
+X
+X. /etc/rc.common
+X
+XIPFW=/sbin/ipfw
+XStartService ()
+X{
+X    ConsoleMessage "Setting My Own ipfw Rules"
+X    ConsoleMessage "    This is the only ipfw rules allowed in this system."
+X    ConsoleMessage "    Prevent from receiving anything from other office at udp port 2222."
+X    ${IPFW} add deny udp from any to any 2222 via en*
+X    ConsoleMessage "    Prevent Microsoft Office's piracy detection mechanism from broadcasting product IDs and access information through a random tcp port greater than 3000 (the ones we saw were all in the range 3000 to 3999 except itunes 3689) to local subnet."
+X    ${IPFW} add deny tcp from any to any 3000-3688 in recv en* setup
+X    ${IPFW} add deny tcp from any to any 3690-3999 in recv en* setup
+X    ConsoleMessage "preventing."
+X    ConsoleMessage -S
+X}
+X
+XStopService ()
+X{
+X    ConsoleMessage "Flushing Customized Firewall Rules"
+X    ${IPFW} -f flush
+X}
+X
+XRestartService ()
+X{
+X    ConsoleMessage "Using New Customized Firewall Rules"
+X    StopService
+X    StartService
+X}
+X
+XRunService "$1"
+END-of-/Library/StartupItems/myIPFW/myIPFW
+echo x - /Library/StartupItems/myIPFW/StartupParameters.plist
+sed 's/^X//' >/Library/StartupItems/myIPFW/StartupParameters.plist << 'END-of-/Library/StartupItems/myIPFW/StartupParameters.plist'
+X<?xml version="1.0" encoding="UTF-8"?>
+X<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+X<plist version="1.0">
+X<dict>
+X	<key>Description</key>
+X	<string>Customized Firewall Rules</string>
+X	<key>Messages</key>
+X	<dict>
+X		<key>start</key>
+X		<string>Starting Customized Firewall Rules.....</string>
+X		<key>stop</key>
+X		<string>Stopping Customized Firewall Rules.....</string>
+X	</dict>
+X	<key>OrderPreference</key>
+X	<string>None</string>
+X	<key>Provides</key>
+X	<array>
+X		<string>myIPFW</string>
+X	</array>
+X	<key>Requires</key>
+X	<array>
+X		<string>NetworkExtensions</string>
+X	</array>
+X</dict>
+X</plist>
+END-of-/Library/StartupItems/myIPFW/StartupParameters.plist
+exit
+
