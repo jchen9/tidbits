@@ -39,12 +39,12 @@ diffit () { svn diff > /tmp/svn_temp.diff; open -a TextMate /tmp/svn_temp.diff; 
 # Chinese zh_TW.Big5 Environment setups
 # export LC_ALL=zh_TW.Big5
 # export LC_CTYPE=zh_TW.Big5
-# export LANG=zh_TW.Big5 
-# export XMODIFIERS=@im=xcin-zh_TW.Big5 
+# export LANG=zh_TW.Big5
+# export XMODIFIERS=@im=xcin-zh_TW.Big5
 # export XMODIFIERS=@im=xcin
 # export LESSCHARSET=latin1
-# stty cs8 -istrip 
-# stty pass8 
+# stty cs8 -istrip
+# stty pass8
 
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
@@ -70,7 +70,7 @@ export PAGER='/usr/bin/less -r'
 # export CLASSPATH="/usr/local/lib/vtk.jar:/home/julian/lib/hb15.jar:./"
 # export PATH="$PATH:${JDK_HOME}/bin"
 
-# Apache Jakarta Tomcat + AXIS 
+# Apache Jakarta Tomcat + AXIS
 # export CATALINA_HOME=$HOME/Applications/Servers/jakarta-tomcat
 # export AXIS=$HOME/Develop/WebServices/axis-1_1
 # export CLASSPATH=$CLASSPATH:$AXIS/lib/axis.jar:$AXIS/lib/axis-ant.jar:$AXIS/lib/commons-discovery.jar:$AXIS/lib/commons-logging.jar:$AXIS/lib/jaxrpc.jar:$AXIS/lib/log4j-1.2.8.jar:$AXIS/lib/saaj.jar:$AXIS/lib/wsdl4j.jar:$CATALINA_HOME/common/lib/servlet.jar
@@ -89,7 +89,7 @@ export REPLYTO=julian@evl.uic.edu
 #  echo 'No global aliases'
 # }
 
-# Read first /etc/inputrc if the variable is not defined, and after the /etc/inputrc 
+# Read first /etc/inputrc if the variable is not defined, and after the /etc/inputrc
 # include the ~/.inputrc
 [ -z $INPUTRC ] && export INPUTRC=/etc/inputrc
 

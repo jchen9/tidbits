@@ -28,11 +28,11 @@
 -(id) init
 {
 	[super init];
-	fido = 34;	
-	
+	fido = 34;
+
 	return self;
 }
-	
+
 -(IBAction) increment:(id)sender
 {
 		// Use properties + Obj-C 2.0 dot syntax
