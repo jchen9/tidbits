@@ -39,30 +39,30 @@ NS_INLINE BOOL JCEqualRanges(JCRange range1, JCRange range2) {
 NS_INLINE BOOL JCRangeIntersect(JCRange range1, JCRange range2)
 {
 	BOOL r = NO;
-	
+
 	double largeLocation = range2.location;
 	JCRange range = range1;
-	
+
 	if(range1.location > range2.location)
 	{
 		largeLocation = range1.location;
 		range = range2;
 	}
-	
+
 	if(JCLocationInRange(largeLocation, range))
 	{
 		r = YES;
 	}
-	
+
 	return r;
 }
 
-NS_INLINE JCRange JCUnionRange(JCRange range1, JCRange range2) 
+NS_INLINE JCRange JCUnionRange(JCRange range1, JCRange range2)
 {
 	JCRange r;
 	r.location = 0;
 	r.length = 0;
-	
+
 	if(JCRangeIntersect(range1, range2))
 	{
 		r.location = (range1.location < range2.location) ? range1.location : range2.location;
@@ -76,7 +76,7 @@ NS_INLINE JCRange JCUnionRange(JCRange range1, JCRange range2)
 NS_INLINE NSString *NSStringFromJCRange(JCRange range)
 {
 	NSString *s = [NSString stringWithFormat:@"{location=%f, length=%f}", range.location, range.length];
-	
+
 	return s;
 }
 
@@ -85,18 +85,18 @@ NS_INLINE JCRange JCRangeFromString(NSString *aString)
 	JCRange r;
 	r.location = 0;
 	r.length = 0;
-	
+
 	NSArray *strs = [aString componentsSeparatedByString:@"="];
-	
+
 	NSString *locationStr = [[[strs objectAtIndex:1] componentsSeparatedByString:@","] objectAtIndex:0];
 	NSString *lengthStr = [[[strs objectAtIndex:2] componentsSeparatedByString:@"}"] objectAtIndex:0];
-		
+
 	double location = [locationStr doubleValue];
 	double length = [lengthStr doubleValue];
 
 	r.location = location;
 	r.length   = length;
-	
+
 	return r;
 }
 
